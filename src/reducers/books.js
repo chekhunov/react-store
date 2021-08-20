@@ -1,12 +1,18 @@
 const initialState ={
-    books: [],
-    ids:[]
+    books: [
+        {
+            id: 0,
+            title: 'Hello W'
+        }
+    ]
 }
 
 export default (state=initialState, action) => {
     switch (action.type) {
-        case 'SET_BOOK':
+        case 'SET_BOOKS':
     return {
+        //первое вернуть прежнее состояние а после загрузить
+        ...state,
         // если просто загрузить
         books: action.payload
     }
