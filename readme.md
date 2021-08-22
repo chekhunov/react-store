@@ -1,3 +1,7 @@
+React
+Redux
+Webpack optimize
+
 start webpack:
 ./node_modules/.bin/webpack
 
