@@ -1,10 +1,12 @@
 const initialState ={
-    books: [
-        {
-            id: 0,
-            title: 'Hello W'
-        }
-    ]
+    isReady: false,
+    books: null,
+    // [
+    //     {
+    //         id: 0,
+    //         title: 'Hello W'
+    //     }
+    // ]
 }
 
 export default (state=initialState, action) => {
@@ -14,7 +16,8 @@ export default (state=initialState, action) => {
         //первое вернуть прежнее состояние а после загрузить
         ...state,
         // если просто загрузить
-        books: action.payload
+        books: action.payload,
+        isReady: true,
     }
         case 'ADD_BOOKS':
             return {
@@ -26,6 +29,12 @@ export default (state=initialState, action) => {
                 action.payload
             ]
     }
+    case 'SET_IS_READY':
+            return {
+            ...state,
+            isReady: action.payload
+    }
+
         default:
             return state;
     }
