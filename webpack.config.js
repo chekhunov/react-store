@@ -87,7 +87,7 @@ const plugins = () => {
             //плагин всегда начинается с new
             new HTMLWebpackPlugin({
                 //путь к файлу index.html
-                template: './index.html',
+                template: './index.ejs',
                 minify: {
                     //елси тру то минифицируется нужно в продакшене
                     collapseWhitespace: isProd
@@ -162,7 +162,11 @@ module.exports = {
     },
     devtool: isDev ? 'source-map' : false,
     plugins: plugins(),
- module: {
+ 
+stats: {
+        children: true,
+      }, 
+module: {
    rules: [
      {
        //регулярное выражение

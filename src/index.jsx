@@ -18,6 +18,7 @@ import {BrowserRouter as Router} from "react-router-dom";
 import App from '@/App.jsx';
 import 'macro-css';
 
+
 //компонент для обьединения редакс и реакт
 //провайдкр все склеит и передаст в наш компонент
 import {Provider} from "react-redux";

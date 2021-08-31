@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 //с помощью коннект мы соединяем нашь компонент с хранилищем
 import {connect} from "react-redux";
-import { setBooks } from './actions/books'
-import axios from 'axios'
+import { setBooks } from './actions/books';
+import axios from 'axios';
+import TopMenu from './components/TopMenu.jsx';
+import {Container} from 'semantic-ui-react';
+
 // import books from './books.json';
 // import { BrowserRouter as Route } from 'react-router-dom';
 
@@ -15,7 +18,7 @@ import axios from 'axios'
 // class App extends Component {
 const App = (props) => {
     const {setBooks} = props
-    const {books} = props.books
+    const {books, isReady} = props.books
     const [items, setItems] = React.useState([]);
 
     React.useEffect(() => {
@@ -35,11 +38,11 @@ const App = (props) => {
     fetchData();
 }, []);
 
-   
-    const mapStateToProps = ({books: {items}}) => ({
-        // books: books.items
-        items
-    })
+const mapStateToProps = ({books: {items}}) => ({
+    books: books.items,
+    isReady: books.isReady
+})
+    
     // render() {
        
         
@@ -51,14 +54,17 @@ const App = (props) => {
         // ]
 
         return (
+            <Container>
+                <TopMenu />
             <ul>
                 {
-                  !books ? '...Loading' : 
+                  !isReady ? '...Loading'  :
                   books.map((book, index) => (
                         <li key={index.toString()}>{book.title}</li>
                     ))
                 }
             </ul>
+            </Container>
             // <div>
             //     {/*<Route path="/" exact><Home books={books} /></Route>*/}
             //     {/* <Popup /> */}
@@ -69,6 +75,8 @@ const App = (props) => {
         )
     }
 // }
+
+
 
 //прикручиваем состояние в пропсы
 const mapStateToProps = state => ({

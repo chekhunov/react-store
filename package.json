@@ -61,16 +61,23 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.7.1",
     "webpack-hot-middleware": "^2.25.0",
+    "webpack-merge": "^5.8.0",
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
+    "-": "0.0.1",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/polyfill": "^7.12.1",
     "css-url-relative-plugin": "^1.1.0",
+    "g": "^2.0.1",
+    "html-loader": "^2.1.2",
     "hydrogen": "^0.2.0",
     "lodash": "^4.17.21",
+    "n": "^7.3.1",
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3"
   }
 }
