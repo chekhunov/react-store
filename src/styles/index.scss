@@ -5,3 +5,29 @@
   background-color: red;
   border-radius: 20px;
 }
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #000;
+}
+
+.cards {
+  width: 100%;
+  
+  & ul {
+    width: 100%;
+    display: flex;
+  flex-wrap: wrap;
+
+    & div {
+      width: calc(25% - 5px);
+    }
+  }
+}
+
+.card {
+  width: calc(25% - 5px);
+}

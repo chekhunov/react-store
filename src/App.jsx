@@ -5,6 +5,8 @@ import { setBooks } from './actions/books';
 import axios from 'axios';
 import TopMenu from './components/TopMenu.jsx';
 import {Container} from 'semantic-ui-react';
+import CardBook from './components/CardBook.jsx';
+import { Card } from 'semantic-ui-react';
 
 // import books from './books.json';
 // import { BrowserRouter as Route } from 'react-router-dom';
@@ -56,14 +58,16 @@ const mapStateToProps = ({books: {items}}) => ({
         return (
             <Container>
                 <TopMenu />
-            <ul>
+                <Card.Group itemsPerRow={4}>
+                <ul>
                 {
                   !isReady ? '...Loading'  :
                   books.map((book, index) => (
-                        <li key={index.toString()}>{book.title}</li>
+                       <CardBook  {...book} />
                     ))
                 }
-            </ul>
+                </ul>
+                </Card.Group>
             </Container>
             // <div>
             //     {/*<Route path="/" exact><Home books={books} /></Route>*/}

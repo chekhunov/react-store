@@ -17,7 +17,8 @@ import { render } from 'react-dom';
 import {BrowserRouter as Router} from "react-router-dom";
 import App from '@/App.jsx';
 import 'macro-css';
-
+import './app.css'
+// import './semantic.scss'
 
 //компонент для обьединения редакс и реакт
 //провайдкр все склеит и передаст в наш компонент
